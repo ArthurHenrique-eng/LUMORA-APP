@@ -5,9 +5,9 @@ Uma plataforma web moderna desenvolvida para oferecer praticidade em seus invest
 
 > Plataforma SaaS completa para pequenos negócios: gestão financeira moderna, automações com IA e educação em investimentos.
 
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-![Stack](https://img.shields.io/badge/stack-Node.js%20%7C%20HTML%20%7C%20CSS%20%7C%20JS-blue)
-![Licença](https://img.shields.io/badge/licença-MIT-green)
+![Status] (https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Stack] (https://img.shields.io/badge/stack-Node.js%20%7C%20HTML%20%7C%20CSS%20%7C%20JS-blue)
+![Licença] (https://img.shields.io/badge/licença-MIT-green)
 
 ---
 
