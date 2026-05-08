@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumora — Inteligência Financeira com IA</title>
+  <meta name="description" content="Plataforma completa com IA para pequenos negócios: gestão financeira, automações e educação em investimentos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">Lumora</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#how">Como funciona</a></li>
+        <li><a href="#pricing">Planos</a></li>
+        <li><a href="#education">Educação</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="#" class="btn btn--ghost">Entrar</a>
+        <a href="#" class="btn btn--gold">Começar grátis</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <canvas id="starfield"></canvas>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        IA financeira para o seu negócio
+      </div>
+
+      <h1 class="hero__title">
+        Sua inteligência<br />
+        <em>financeira</em> completa<br />
+        <span class="hero__title--accent">em um só lugar</span>
+      </h1>
+
+      <p class="hero__sub">
+        Gestão financeira moderna, automações com IA e educação em investimentos —
+        tudo integrado para você crescer com clareza e controle.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#" class="btn btn--gold btn--lg">
+          <span>Criar conta grátis</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn btn--outline btn--lg">Ver como funciona</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__number" data-target="3">0</span><span class="stat__suffix">+</span>
+          <span class="stat__label">Módulos integrados</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__number" data-target="100">0</span><span class="stat__suffix">%</span>
+          <span class="stat__label">Alimentado por IA</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__number" data-target="0">0</span><span class="stat__suffix"></span>
+          <span class="stat__label">Custo inicial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD MOCKUP -->
+    <div class="hero__mockup">
+      <div class="mockup-card mockup-card--main">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="mockup-title">Dashboard Lumora</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-balance">
+            <span class="mockup-label">Saldo total</span>
+            <span class="mockup-value">R$ <span id="balance-anim">24.350,00</span></span>
+            <span class="mockup-change up">↑ +12,4% este mês</span>
+          </div>
+          <div class="mockup-chart">
+            <svg viewBox="0 0 240 80" class="chart-svg">
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f0a030" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#f0a030" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="chart-area" d="M0,60 C20,55 40,45 60,40 C80,35 100,50 120,38 C140,26 160,30 180,20 C200,10 220,15 240,8 L240,80 L0,80 Z" fill="url(#chartGrad)"/>
+              <path class="chart-line" d="M0,60 C20,55 40,45 60,40 C80,35 100,50 120,38 C140,26 160,30 180,20 C200,10 220,15 240,8" fill="none" stroke="#f0a030" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="mockup-pills">
+            <span class="pill pill--green"> Receita R$8.200</span>
+            <span class="pill pill--red"> Gastos R$3.850</span>
+            <span class="pill pill--blue"> Investido R$12.300</span>
+          </div>
+          <div class="mockup-ai">
+            <div class="ai-indicator">
+              <span class="ai-dot"></span>
+              <span>IA Lumora analisando...</span>
+            </div>
+            <p class="ai-tip">"Seus gastos com marketing aumentaram 18%. Posso sugerir otimizações?"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating cards -->
+      <div class="mockup-card mockup-card--float mockup-card--top">
+        <span>🤖</span>
+        <div>
+          <strong>Automação ativa</strong>
+          <small>Post gerado para Instagram</small>
+        </div>
+      </div>
+      <div class="mockup-card mockup-card--float mockup-card--bottom">
+        <span>🎓</span>
+        <div>
+          <strong>+240 XP conquistados</strong>
+          <small>Aula: Renda Fixa completada</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- LOGOS / SOCIAL PROOF -->
+  <section class="logos">
+    <div class="container">
+      <p class="logos__label">Tecnologias que nos movem</p>
+      <div class="logos__track">
+        <div class="logos__group">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">NestJS</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">JWT Auth</span>
+          <span class="tech-badge">OpenAI API</span>
+          <span class="tech-badge">Cloudflare</span>
+          <span class="tech-badge">Pix API</span>
+          <span class="tech-badge">WhatsApp Business</span>
+        </div>
+        <div class="logos__group" aria-hidden="true">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">NestJS</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">JWT Auth</span>
+          <span class="tech-badge">OpenAI API</span>
+          <span class="tech-badge">Cloudflare</span>
+          <span class="tech-badge">Pix API</span>
+          <span class="tech-badge">WhatsApp Business</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="pillars" id="features">
+    <div class="container">
+      <div class="section-label">Três módulos. Uma plataforma.</div>
+      <h2 class="section-title">Tudo que seu negócio<br /><em>precisa para crescer</em></h2>
+
+      <div class="pillars__grid">
+
+        <!-- Pillar 1: AI Tools -->
+        <div class="pillar" data-index="1">
+          <div class="pillar__number">01</div>
+          <div class="pillar__icon">🤖</div>
+          <h3 class="pillar__title">IA para Pequenos Negócios</h3>
+          <p class="pillar__desc">
+            Automatize sua presença digital e operações com inteligência artificial treinada para o mercado brasileiro.
+          </p>
+          <ul class="pillar__features">
+            <li><span class="check">✦</span> Geração de posts para redes sociais</li>
+            <li><span class="check">✦</span> Geração automática de contratos</li>
+            <li><span class="check">✦</span> Chatbot para WhatsApp</li>
+            <li><span class="check">✦</span> Automação no Instagram</li>
+            <li><span class="check">✦</span> Atendimento ao cliente com IA</li>
+          </ul>
+          <div class="pillar__cta">
+            <span>Explorar módulo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Finance -->
+        <div class="pillar pillar--featured" data-index="2">
+          <div class="pillar__badge">Mais usado</div>
+          <div class="pillar__number">02</div>
+          <div class="pillar__icon">💰</div>
+          <h3 class="pillar__title">Gestão Financeira Inteligente</h3>
+          <p class="pillar__desc">
+            Dashboards modernos, controle de receitas e despesas, metas financeiras e análise preditiva com IA.
+          </p>
+          <ul class="pillar__features">
+            <li><span class="check">✦</span> Dashboard com gráficos em tempo real</li>
+            <li><span class="check">✦</span> Controle de receitas e gastos</li>
+            <li><span class="check">✦</span> Metas e planejamento mensal</li>
+            <li><span class="check">✦</span> Relatórios automáticos</li>
+            <li><span class="check">✦</span> Integração PIX <em>(em breve)</em></li>
+          </ul>
+          <div class="pillar__cta">
+            <span>Explorar módulo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Education -->
+        <div class="pillar" data-index="3">
+          <div class="pillar__number">03</div>
+          <div class="pillar__icon">🎓</div>
+          <h3 class="pillar__title">Educação em Investimentos</h3>
+          <p class="pillar__desc">
+            Aprenda a investir com cursos interativos, simulados reais, tutoria por IA e gamificação que mantém o foco.
+          </p>
+          <ul class="pillar__features">
+            <li><span class="check">✦</span> Cursos estruturados por nível</li>
+            <li><span class="check">✦</span> Simulados com mercado real</li>
+            <li><span class="check">✦</span> IA tutora personalizada</li>
+            <li><span class="check">✦</span> Sistema de XP e conquistas</li>
+            <li><span class="check">✦</span> Trilhas: Renda Fixa, FIIs, Ações</li>
+          </ul>
+          <div class="pillar__cta">
+            <span>Explorar módulo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-label">Processo simples</div>
+      <h2 class="section-title">Do cadastro ao controle<br /><em>em minutos</em></h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__content">
+            <h4>Crie sua conta</h4>
+            <p>Cadastro gratuito em segundos. Sem cartão de crédito. Sem surpresas.</p>
+          </div>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__content">
+            <h4>Configure seu perfil</h4>
+            <p>Diga à IA seu tipo de negócio e objetivos. Ela personaliza tudo para você.</p>
+          </div>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__content">
+            <h4>Comece a crescer</h4>
+            <p>Acesse os três módulos, automatize tarefas e aprenda enquanto constrói.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label">Planos</div>
+      <h2 class="section-title">Comece de graça,<br /><em>escale quando quiser</em></h2>
+
+      <div class="pricing__grid">
+
+        <!-- Free -->
+        <div class="plan">
+          <div class="plan__header">
+            <span class="plan__name">Gratuito</span>
+            <div class="plan__price">
+              <span class="plan__currency">R$</span>
+              <span class="plan__amount">0</span>
+              <span class="plan__period">/mês</span>
+            </div>
+            <p class="plan__desc">Para quem está começando a organizar as finanças</p>
+          </div>
+          <ul class="plan__features">
+            <li><span>✓</span> Dashboard financeiro básico</li>
+            <li><span>✓</span> Controle de até 50 transações/mês</li>
+            <li><span>✓</span> 1 conta bancária</li>
+            <li><span>✓</span> 3 automações de IA/mês</li>
+            <li><span>✓</span> Acesso a 2 cursos introdutórios</li>
+            <li class="disabled"><span>✗</span> Relatórios avançados</li>
+            <li class="disabled"><span>✗</span> IA avançada</li>
+            <li class="disabled"><span>✗</span> Exportação de dados</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Criar conta grátis</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan plan--premium">
+          <div class="plan__popular">⭐ Mais popular</div>
+          <div class="plan__header">
+            <span class="plan__name">Premium</span>
+            <div class="plan__price">
+              <span class="plan__currency">R$</span>
+              <span class="plan__amount">49</span>
+              <span class="plan__period">/mês</span>
+            </div>
+            <p class="plan__desc">Para negócios em crescimento que precisam de controle total</p>
+          </div>
+          <ul class="plan__features">
+            <li><span>✓</span> Tudo do plano gratuito</li>
+            <li><span>✓</span> Transações ilimitadas</li>
+            <li><span>✓</span> Múltiplas contas bancárias</li>
+            <li><span>✓</span> IA avançada sem limites</li>
+            <li><span>✓</span> Automações ilimitadas</li>
+            <li><span>✓</span> Todos os cursos desbloqueados</li>
+            <li><span>✓</span> Relatórios e exportação (PDF/Excel)</li>
+            <li><span>✓</span> Suporte prioritário</li>
+          </ul>
+          <a href="#" class="btn btn--gold btn--full">Assinar Premium</a>
+        </div>
+
+        <!-- Business -->
+        <div class="plan">
+          <div class="plan__header">
+            <span class="plan__name">Business</span>
+            <div class="plan__price">
+              <span class="plan__currency">R$</span>
+              <span class="plan__amount">149</span>
+              <span class="plan__period">/mês</span>
+            </div>
+            <p class="plan__desc">Para equipes e empresas que precisam de escala</p>
+          </div>
+          <ul class="plan__features">
+            <li><span>✓</span> Tudo do Premium</li>
+            <li><span>✓</span> Até 10 usuários</li>
+            <li><span>✓</span> Painel administrativo</li>
+            <li><span>✓</span> API de integração</li>
+            <li><span>✓</span> White-label disponível</li>
+            <li><span>✓</span> Open Finance <em>(em breve)</span></li>
+            <li><span>✓</span> Integração PIX <em>(em breve)</em></li>
+            <li><span>✓</span> SLA e suporte dedicado</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Falar com equipe</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI EDUCATION SPOTLIGHT -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="education__grid">
+        <div class="education__content">
+          <div class="section-label">Módulo educação</div>
+          <h2 class="section-title">Aprenda a investir<br /><em>enquanto você cresce</em></h2>
+          <p class="education__desc">
+            Nossa plataforma educacional integrada usa IA para adaptar os conteúdos ao seu nível.
+            Você ganha XP, sobe de nível e aprende de verdade — não apenas assiste aulas.
+          </p>
+          <div class="education__perks">
+            <div class="perk">
+              <span class="perk__icon">🎯</span>
+              <div>
+                <strong>Trilhas personalizadas</strong>
+                <p>IA monta seu plano de estudos baseado nos seus objetivos</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk__icon">🏆</span>
+              <div>
+                <strong>Gamificação real</strong>
+                <p>XP, conquistas, rankings e certificados que valem</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk__icon">📊</span>
+              <div>
+                <strong>Simulados com mercado real</strong>
+                <p>Pratique com dados reais de ações, FIIs e renda fixa</p>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn btn--gold">Ver trilhas disponíveis →</a>
+        </div>
+        <div class="education__visual">
+          <div class="edu-card">
+            <div class="edu-card__header">
+              <span class="edu-badge">📚 Em andamento</span>
+              <span class="edu-level">Nível 3 — Intermediário</span>
+            </div>
+            <div class="edu-progress">
+              <div class="edu-progress__bar">
+                <div class="edu-progress__fill" style="width: 68%"></div>
+              </div>
+              <span>68% concluído</span>
+            </div>
+            <div class="edu-modules">
+              <div class="edu-module edu-module--done">Renda Fixa — Tesouro Direto</div>
+              <div class="edu-module edu-module--active">FIIs — Fundos Imobiliários</div>
+              <div class="edu-module">Ações — Análise Fundamentalista</div>
+              <div class="edu-module">Criptoativos — Introdução</div>
+            </div>
+            <div class="edu-xp">
+              <div class="xp-bar">
+                <div class="xp-bar__fill"></div>
+              </div>
+              <span>1.840 / 2.500 XP</span>
+            </div>
+            <div class="edu-ai">
+              <span class="ai-dot"></span>
+              <em>"Continue assim! Você está 2x mais rápido que a média."</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final__box">
+        <div class="cta-final__glow"></div>
+        <h2>Pronto para começar a<br /><em>transformar seu futuro financeiro?</em></h2>
+        <p>Cadastre-se gratuitamente hoje. Sem cartão de crédito.</p>
+        <div class="cta-final__btns">
+          <a href="#" class="btn btn--gold btn--lg">Criar minha conta grátis</a>
+          <a href="#" class="btn btn--ghost btn--lg">Agendar uma demo</a>
+        </div>
+        <div class="cta-final__trust">
+          <span>Dados protegidos com criptografia</span>
+          <span>·</span>
+          <span>🇧🇷 Servidor no Brasil</span>
+          <span>·</span>
+          <span>LGPD compliant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="logo-mark">◈</span>
+            <span class="logo-text">Lumora</span>
+          </a>
+          <p>Inteligência financeira completa para o empreendedor brasileiro.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <strong>Produto</strong>
+          <a href="#">Funcionalidades</a>
+          <a href="#">Planos e preços</a>
+          <a href="#">Roadmap</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer__col">
+          <strong>Empresa</strong>
+          <a href="#">Sobre nós</a>
+          <a href="#">Blog</a>
+          <a href="#">Carreiras</a>
+          <a href="#">Contato</a>
+        </div>
+        <div class="footer__col">
+          <strong>Legal</strong>
+          <a href="#">Termos de uso</a>
+          <a href="#">Privacidade</a>
+          <a href="#">LGPD</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Lumora. Todos os direitos reservados.</span>
+        <span>Feito com café no Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+  <script src="./js/script.js"></script>
+</html>
