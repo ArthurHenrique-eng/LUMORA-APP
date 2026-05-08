@@ -5,9 +5,9 @@ Uma plataforma web moderna desenvolvida para oferecer praticidade em seus invest
 
 > Plataforma SaaS completa para pequenos negócios: gestão financeira moderna, automações com IA e educação em investimentos.
 
-![Status] (https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-![Stack] (https://img.shields.io/badge/stack-Node.js%20%7C%20HTML%20%7C%20CSS%20%7C%20JS-blue)
-![Licença] (https://img.shields.io/badge/licença-MIT-green)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Stack](https://img.shields.io/badge/stack-Node.js%20%7C%20HTML%20%7C%20CSS%20%7C%20JS-blue)
+![Licença](https://img.shields.io/badge/licença-MIT-green)
 
 ---
 
@@ -18,7 +18,7 @@ A **Lumora** é uma plataforma SaaS com três módulos integrados:
 | Módulo | Descrição |
 |---|---|
 | **IA para Negócios** | Geração de posts, contratos, chatbot WhatsApp, automação Instagram |
-| **Gestão Financeira** | Dashboard moderno, controle de receitas/gastos, metas, relatórios |
+| **Gestão Financeira** | Dashboard moderno, controle de investimentos/gastos, metas, relatórios |
 | **Educação Financeira** | Cursos, simulados, IA tutora, gamificação com XP |
 
 ---
@@ -292,7 +292,7 @@ classDiagram
 ### Módulo Financeiro
 | Funcionalidade | Detalhes |
 |---|---|
-| Dashboard | Visão geral de saldo, receitas e despesas com gráficos |
+| Dashboard | Visão geral, melhores investimentos e valores dos investimentos com gráficos |
 | Cadastro de transações | Tipo (receita/despesa), valor, categoria, descrição e data |
 | Metas financeiras | Definição de valor-alvo, prazo e acompanhamento de progresso |
 | Relatórios | Geração e exportação em PDF por período |
@@ -328,8 +328,6 @@ classDiagram
 | **Gratuito** | R$ 0/mês | Dashboard básico, 10 transações/mês |
 | **Premium** | R$ 49/mês | Todos os módulos, relatórios, IA ilimitada |
 | **Business** | R$ 149/mês | Multi-usuário, API pública, Open Finance |
-
-**Meta MRR Ano 1:** R$ 15.000/mês (300 assinantes premium)
 
 ---
 
