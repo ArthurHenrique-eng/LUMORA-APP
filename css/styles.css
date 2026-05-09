@@ -170,17 +170,20 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 1.2rem var(--space-md);
-  transition: background 0.3s, backdrop-filter 0.3s;
-}
-
-.nav.scrolled {
-  background: rgba(5, 7, 15, 0.88);
+  background: rgba(5, 7, 15, 0.85);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
 }
-
+ 
+.nav.scrolled {
+  background: rgba(5, 7, 15, 0.96);
+  border-bottom-color: var(--border);
+}
+ 
 .nav__inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -188,7 +191,7 @@ body {
   align-items: center;
   gap: var(--space-md);
 }
-
+ 
 .nav__logo {
   display: flex;
   align-items: center;
@@ -199,37 +202,37 @@ body {
   font-size: 1.15rem;
   letter-spacing: -0.02em;
 }
-
+ 
 .logo-mark {
   color: var(--gold);
   font-size: 1.3em;
   line-height: 1;
 }
-
+ 
 .nav__links {
   display: flex;
   list-style: none;
   gap: var(--space-md);
   margin-left: auto;
 }
-
+ 
 .nav__links a {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s;
 }
-
+ 
 .nav__links a:hover {
   color: var(--text);
 }
-
+ 
 .nav__actions {
   display: flex;
   gap: 0.5rem;
   margin-left: var(--space-sm);
 }
-
+ 
 .nav__hamburger {
   display: none;
   flex-direction: column;
@@ -240,7 +243,7 @@ body {
   padding: 4px;
   margin-left: auto;
 }
-
+ 
 .nav__hamburger span {
   width: 24px;
   height: 2px;
@@ -605,44 +608,10 @@ body {
   font-size: 0.72rem;
 }
 
-.mockup-card--top {
-  top: -20px;
-  right: -30px;
-  animation: floatUp 3s ease-in-out infinite;
-}
-
-.mockup-card--bottom {
-  bottom: -20px;
-  left: -30px;
-  animation: floatUp 3s ease-in-out infinite 1.5s;
-}
 
 @keyframes floatUp {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-8px); }
-}
-
-.hero__scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-dim);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  grid-column: 1 / -1;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollLine 1.5s ease infinite;
 }
 
 @keyframes scrollLine {
