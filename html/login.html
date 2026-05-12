@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumora | Login</title>
+  <meta name="description" content="Acesse sua conta Lumora e gerencie suas financas com inteligencia artificial." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+  <main class="login-page">
+    <div class="login-page__bg" aria-hidden="true">
+      <div class="glow glow--gold"></div>
+      <div class="glow glow--blue"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <section class="login-shell" aria-label="Area de login da Lumora">
+      <aside class="login-showcase">
+        <a class="brand" href="./index.html" aria-label="Voltar para a pagina inicial">
+          <span class="brand__mark">&#9672;</span>
+          <span class="brand__text">Lumora</span>
+        </a>
+        <p class="brand__tag">Inteligencia financeira com IA</p>
+
+        <h1>
+          Volte para o seu
+          <em>painel financeiro</em>
+          com seguranca.
+        </h1>
+        <p class="showcase__copy">
+          Acompanhe metas, automacoes e insights em um unico lugar com a experiencia premium da Lumora.
+        </p>
+
+        <ul class="showcase__list">
+          <li>Dashboard financeiro em tempo real</li>
+          <li>Insights inteligentes para decisoes melhores</li>
+          <li>Educacao e crescimento continuo no mesmo app</li>
+        </ul>
+
+        <a class="showcase__back" href="./index.html">Voltar para inicio</a>
+      </aside>
+
+      <section class="login-card" aria-labelledby="login-title">
+        <header class="login-card__header">
+          <span class="login-card__eyebrow">Acesso seguro</span>
+          <h2 id="login-title">Entrar na Lumora</h2>
+          <p>Use seu email e senha para continuar.</p>
+        </header>
+
+        <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="email@exemplo.com" required />
+            <p id="emailError" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <div class="field__label-row">
+              <label for="password">Senha</label>
+              <a href="./recuperar-senha.html" class="field__link">Esqueci minha senha</a>
+            </div>
+            <div class="password-wrap">
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Minimo 6 caracteres" required minlength="6" />
+              <button type="button" id="togglePassword" class="toggle-password" aria-label="Mostrar senha">Mostrar</button>
+            </div>
+            <p id="passwordError" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <label class="remember">
+            <input id="remember" name="remember" type="checkbox" />
+            <span>Lembrar-me neste dispositivo</span>
+          </label>
+
+          <button id="submitButton" type="submit" class="btn btn--primary">
+            <span class="btn__text">Entrar</span>
+            <span class="btn__loader" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <div class="divider" role="presentation">
+          <span>ou continue com</span>
+        </div>
+
+        <div class="social">
+          <button type="button" class="btn btn--social social-btn" data-social="Google">
+            <span aria-hidden="true">G</span>
+            <span>Continuar com Google</span>
+          </button>
+          <button type="button" class="btn btn--social social-btn" data-social="Apple">
+            <span aria-hidden="true">A</span>
+            <span>Continuar com Apple</span>
+          </button>
+        </div>
+
+        <footer class="login-card__footer">
+          <p>
+            Ainda não tem conta?
+            <a href="./cadastro.html">Criar conta</a>
+          </p>
+          <a href="./index.html" class="footer-link">Voltar para inicio</a>
+        </footer>
+      </section>
+    </section>
+  </main>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>
