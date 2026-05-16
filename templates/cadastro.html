@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | Lumora</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1a1a1a;
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0 0 20px 0;
+      color: #4b5563;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 11px 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #1f6feb;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .links {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    a {
+      color: #1f6feb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" aria-labelledby="titulo-cadastro">
+      <h1 id="titulo-cadastro">Cadastro simples</h1>
+      <p>Pagina provisoria para testar se o Flask e o banco estao funcionando.</p>
+
+      <form method="post" action="/registrar">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="email@exemplo.com"
+          required
+        />
+
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          minlength="6"
+          placeholder="Minimo 6 caracteres"
+          required
+        />
+
+        <button type="submit">Criar conta</button>
+      </form>
+
+      <div class="links">
+        <a href="/login">Ja tenho conta</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

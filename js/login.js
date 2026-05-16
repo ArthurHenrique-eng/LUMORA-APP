@@ -99,31 +99,17 @@
   });
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
     const emailIsValid = validateEmail();
     const passwordIsValid = validatePassword();
 
     if (!emailIsValid || !passwordIsValid) {
+      event.preventDefault();
       setFormMessage("error", "Revise os campos e tente novamente.");
       return;
     }
 
     setLoadingState(true);
     setFormMessage("info", "Validando acesso...");
-
-    const payload = {
-      email: emailInput.value.trim(),
-      password: passwordInput.value,
-      remember: rememberInput.checked,
-    };
-
-    // TODO: Replace this simulation with real fetch authentication.
-    window.setTimeout(() => {
-      setLoadingState(false);
-      setFormMessage("success", "Login validado com sucesso. Integracao de API em breve.");
-      console.log("Login payload ready for API:", payload);
-    }, 1000);
   });
 
   socialButtons.forEach((button) => {
