@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="/css/login.css" />
 </head>
 <body>
   <main class="login-page">
@@ -20,7 +20,7 @@
 
     <section class="login-shell" aria-label="Area de login da Lumora">
       <aside class="login-showcase">
-        <a class="brand" href="./index.html" aria-label="Voltar para a pagina inicial">
+        <a class="brand" href="http://127.0.0.1:5000/" aria-label="Voltar para a pagina inicial">
           <span class="brand__mark">&#9672;</span>
           <span class="brand__text">Lumora</span>
         </a>
@@ -41,7 +41,7 @@
           <li>Educacao e crescimento continuo no mesmo app</li>
         </ul>
 
-        <a class="showcase__back" href="./index.html">Voltar para inicio</a>
+        <a class="showcase__back" href="http://127.0.0.1:5000/">Voltar para inicio</a>
       </aside>
 
       <section class="login-card" aria-labelledby="login-title">
@@ -53,7 +53,7 @@
 
         <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
 
-        <form id="loginForm" class="login-form" method="post" action="/login" novalidate>
+        <form id="loginForm" class="login-form" method="post" action="http://127.0.0.1:5000/login" novalidate>
           <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" placeholder="email@exemplo.com" required />
@@ -63,7 +63,7 @@
           <div class="field">
             <div class="field__label-row">
               <label for="password">Senha</label>
-              <a href="./recuperar-senha.html" class="field__link">Esqueci minha senha</a>
+              <a href="/recuperar-senha.html" class="field__link">Esqueci minha senha</a>
             </div>
             <div class="password-wrap">
               <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Minimo 6 caracteres" required minlength="6" />
@@ -101,14 +101,16 @@
         <footer class="login-card__footer">
           <p>
             Ainda não tem conta?
-            <a href="./cadastro.html">Criar conta</a>
+            <a href="http://127.0.0.1:5000/cadastro">Criar conta</a>
           </p>
-          <a href="./index.html" class="footer-link">Voltar para inicio</a>
+          <a href="http://127.0.0.1:5000/" class="footer-link">Voltar para inicio</a>
         </footer>
       </section>
     </section>
   </main>
 
-  <script src="../js/login.js"></script>
+  <script src="/js/login.js"></script>
 </body>
 </html>
+
+

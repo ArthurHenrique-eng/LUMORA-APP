@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumora | Home do Usuario</title>
+  <meta name="description" content="Painel completo da Lumora com IA, gestao financeira e educacao em investimentos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--blue"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="http://127.0.0.1:5000/" class="nav__logo">
+        <span class="logo-mark">&#9672;</span>
+        <span class="logo-text">Lumora</span>
+      </a>
+      <div class="nav__actions">
+        <a href="#modulos" class="btn btn--ghost">Modulos</a>
+        <a href="#planos" class="btn btn--ghost">Planos</a>
+        <a href="/api/usuarios" class="btn btn--gold">API Usuarios</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__tag">Area do usuario ativa</span>
+          <h1>
+            Tudo que foi prometido na landing
+            <em>agora no seu painel</em>
+          </h1>
+          <p>
+            IA para negocios, gestao financeira inteligente e educacao em investimentos em uma unica experiencia.
+          </p>
+          <div class="hero__cta">
+            <a href="#modulos" class="btn btn--gold">Explorar modulos</a>
+            <a href="http://127.0.0.1:5000/" class="btn btn--outline">Voltar para landing</a>
+          </div>
+        </div>
+        <div class="hero__stats">
+          <article class="stat-card">
+            <span class="stat-card__label">Modulos ativos</span>
+            <strong class="stat-card__value" data-target="3">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Recursos disponiveis</span>
+            <strong class="stat-card__value" data-target="12">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Plano atual</span>
+            <strong class="stat-card__value stat-card__value--text">Gratuito</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modulos" class="section">
+      <div class="container">
+        <p class="section-label">Tres modulos</p>
+        <h2 class="section-title">Tudo que o produto promete,<br /><em>organizado no seu dia a dia</em></h2>
+        <div class="modules-grid">
+          <article class="module-card">
+            <span class="module-card__num">01</span>
+            <span class="module-card__icon">🤖</span>
+            <h3>IA para Pequenos Negocios</h3>
+            <p>Automatize presenca digital e operacoes com IA treinada para o mercado brasileiro.</p>
+            <ul>
+              <li>Geracao de posts para redes sociais</li>
+              <li>Geracao automatica de contratos</li>
+              <li>Chatbot para WhatsApp</li>
+              <li>Automacao no Instagram</li>
+              <li>Atendimento com IA</li>
+            </ul>
+          </article>
+
+          <article class="module-card module-card--featured">
+            <span class="module-card__badge">Mais usado</span>
+            <span class="module-card__num">02</span>
+            <span class="module-card__icon">💰</span>
+            <h3>Gestao Financeira Inteligente</h3>
+            <p>Dashboards, controle de receitas e despesas, metas financeiras e analise preditiva.</p>
+            <ul>
+              <li>Dashboard com graficos em tempo real</li>
+              <li>Controle de receitas e gastos</li>
+              <li>Metas e planejamento mensal</li>
+              <li>Relatorios automaticos</li>
+              <li>Integracao PIX (em breve)</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <span class="module-card__num">03</span>
+            <span class="module-card__icon">🎓</span>
+            <h3>Educacao em Investimentos</h3>
+            <p>Cursos interativos, simulados reais, IA tutora e gamificacao com XP.</p>
+            <ul>
+              <li>Cursos estruturados por nivel</li>
+              <li>Simulados com mercado real</li>
+              <li>IA tutora personalizada</li>
+              <li>Sistema de XP e conquistas</li>
+              <li>Trilhas de estudo por tema</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <p class="section-label">Recursos completos</p>
+        <h2 class="section-title">Disponivel agora no sistema</h2>
+        <div class="features-grid">
+          <article class="feature-box">
+            <h3>Fluxo de Conta</h3>
+            <p>Cadastro, login e redirecionamento entre paginas funcionando com banco SQLite.</p>
+            <a href="http://127.0.0.1:5000/cadastro">Cadastrar novo usuario</a>
+          </article>
+          <article class="feature-box">
+            <h3>Gestao de Usuarios (API)</h3>
+            <p>Endpoints para listar, buscar, editar e remover usuarios.</p>
+            <a href="/api/usuarios">Abrir lista de usuarios</a>
+          </article>
+          <article class="feature-box">
+            <h3>Roadmap do Produto</h3>
+            <p>Base preparada para evoluir com dashboard real, metas, pagamentos e IA integrada.</p>
+            <a href="http://127.0.0.1:5000/">Ver visao geral da plataforma</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="section">
+      <div class="container">
+        <p class="section-label">Planos</p>
+        <h2 class="section-title">Escala conforme seu negocio cresce</h2>
+        <div class="plans-grid">
+          <article class="plan-card">
+            <h3>Gratuito</h3>
+            <p class="price">R$ 0<span>/mes</span></p>
+            <ul>
+              <li>Dashboard financeiro basico</li>
+              <li>Ate 50 transacoes por mes</li>
+              <li>3 automacoes de IA por mes</li>
+            </ul>
+          </article>
+          <article class="plan-card plan-card--premium">
+            <h3>Premium</h3>
+            <p class="price">R$ 49<span>/mes</span></p>
+            <ul>
+              <li>Tudo do plano gratuito</li>
+              <li>Transacoes e IA ilimitadas</li>
+              <li>Relatorios e exportacao</li>
+            </ul>
+          </article>
+          <article class="plan-card">
+            <h3>Business</h3>
+            <p class="price">R$ 149<span>/mes</span></p>
+            <ul>
+              <li>Tudo do Premium</li>
+              <li>Multiusuario e painel admin</li>
+              <li>API publica e suporte dedicado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container cta__box">
+        <h2>Seu painel esta alinhado com a proposta da Lumora</h2>
+        <p>Agora voce pode evoluir os modulos com dados reais, integracoes e automacoes.</p>
+        <div class="cta__actions">
+          <a href="#modulos" class="btn btn--gold">Revisar modulos</a>
+          <a href="http://127.0.0.1:5000/login" class="btn btn--ghost">Trocar conta</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/home.js"></script>
+</body>
+</html>
