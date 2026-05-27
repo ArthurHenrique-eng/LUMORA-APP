@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumora | Analytics & Business Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.css" />
+  <link rel="stylesheet" href="/css/analytics.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="http://127.0.0.1:5000/" class="nav__logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">Lumora</span>
+      </a>
+      <div class="nav__actions">
+        <a href="/templates/home.html" class="btn btn--ghost">Dashboard Principal</a>
+        <a href="#" class="btn btn--gold" onclick="mostrarModalRelatorio()">Enviar Relatório</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="analytics-container">
+    <!-- HEADER -->
+    <section class="analytics-header">
+      <div class="container">
+        <h1>Analytics & Business Intelligence</h1>
+        <p>Inteligência acionável para seu negócio</p>
+
+        <div class="controls">
+          <select id="periodoSelect" onchange="atualizarDashboard()">
+            <option value="7">Últimos 7 dias</option>
+            <option value="30" selected>Últimos 30 dias</option>
+            <option value="90">Últimos 90 dias</option>
+            <option value="180">Últimos 180 dias</option>
+          </select>
+          <button class="btn btn--gold" onclick="atualizarDashboard()">Atualizar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPIs PRINCIPAIS -->
+    <section class="kpis-section">
+      <div class="container">
+        <h2>KPIs Principais</h2>
+        <div class="kpis-grid">
+          <div class="kpi-card" id="kpi-roi">
+            <div class="kpi-label">ROI (Return on Investment)</div>
+            <div class="kpi-value" id="roi-value">--</div>
+            <div class="kpi-change" id="roi-change">--</div>
+            <div class="kpi-info">Retorno sobre investimento</div>
+          </div>
+
+          <div class="kpi-card" id="kpi-ltv">
+            <div class="kpi-label">LTV (Lifetime Value)</div>
+            <div class="kpi-value" id="ltv-value">--</div>
+            <div class="kpi-change" id="ltv-change">--</div>
+            <div class="kpi-info">Valor total gerado</div>
+          </div>
+
+          <div class="kpi-card" id="kpi-cac">
+            <div class="kpi-label">CAC (Customer Acquisition Cost)</div>
+            <div class="kpi-value" id="cac-value">--</div>
+            <div class="kpi-change" id="cac-change">--</div>
+            <div class="kpi-info">Custo de aquisição</div>
+          </div>
+
+          <div class="kpi-card" id="kpi-margem">
+            <div class="kpi-label">Margem de Lucro</div>
+            <div class="kpi-value" id="margem-value">--</div>
+            <div class="kpi-change" id="margem-change">--</div>
+            <div class="kpi-info">% de lucro sobre receita</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO FINANCEIRO -->
+    <section class="resumo-section">
+      <div class="container">
+        <h2>Resumo Financeiro</h2>
+        <div class="resumo-grid">
+          <div class="resumo-card receita">
+            <div class="resumo-label">Receita Total</div>
+            <div class="resumo-value" id="receita-value">R$ 0,00</div>
+          </div>
+          <div class="resumo-card despesa">
+            <div class="resumo-label">Despesa Total</div>
+            <div class="resumo-value" id="despesa-value">R$ 0,00</div>
+          </div>
+          <div class="resumo-card lucro">
+            <div class="resumo-label">Lucro Líquido</div>
+            <div class="resumo-value" id="lucro-value">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS -->
+    <section class="graficos-section">
+      <div class="container">
+        <div class="graficos-grid">
+          <!-- Fluxo de Caixa -->
+          <div class="grafico-card">
+            <h3>Fluxo de Caixa (30 dias)</h3>
+            <canvas id="fluxoCaixaChart"></canvas>
+          </div>
+
+          <!-- Distribuição de Receita -->
+          <div class="grafico-card">
+            <h3>Top 5 Receitas por Categoria</h3>
+            <canvas id="receitaChart"></canvas>
+          </div>
+
+          <!-- Distribuição de Despesa -->
+          <div class="grafico-card">
+            <h3>Top 5 Despesas por Categoria</h3>
+            <canvas id="despesaChart"></canvas>
+          </div>
+
+          <!-- ROI Evolution -->
+          <div class="grafico-card">
+            <h3>Evolução ROI</h3>
+            <canvas id="roiChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVISÕES COM IA -->
+    <section class="previsao-section">
+      <div class="container">
+        <h2>🤖 Previsões com IA</h2>
+        <div class="previsao-card">
+          <div class="previsao-content">
+            <div class="previsao-item">
+              <label>Crescimento Estimado (30d)</label>
+              <div class="previsao-valor" id="crescimento-value">--</div>
+            </div>
+            <div class="previsao-item">
+              <label>Confiança da Previsão</label>
+              <div class="previsao-bar">
+                <div class="previsao-fill" id="confianca-bar"></div>
+              </div>
+              <span id="confianca-value">0%</span>
+            </div>
+            <div class="previsao-item full">
+              <label>💡 Insight Recomendado</label>
+              <p id="insight-text">Carregando análise...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- RECOMENDAÇÕES -->
+<section class="recomendacoes-section">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <span class="section-badge">
+          ✦ Inteligência Estratégica
+        </span>
+
+        <h2>Recomendações Inteligentes</h2>
+
+        <p class="section-description">
+          Insights automáticos gerados com base na performance
+          financeira, comportamento operacional e tendências do negócio.
+        </p>
+      </div>
+
+      <div class="section-status">
+        <span class="status-dot"></span>
+        IA analisando dados em tempo real
+      </div>
+    </div>
+
+    <div class="recomendacoes-grid" id="recomendacoes">
+
+      <!-- CARD EXEMPLO -->
+      <div class="recomendacao-item">
+        <div class="recomendacao-top">
+          <span class="recomendacao-icon">📈</span>
+          <span class="recomendacao-tag positive">
+            Oportunidade
+          </span>
+        </div>
+
+        <h3 class="recomendacao-titulo">
+          Receita com crescimento acelerado
+        </h3>
+
+        <p class="recomendacao-texto">
+          Seu faturamento apresentou crescimento acima da média
+          nos últimos 30 dias. Considere aumentar investimento
+          nos canais de maior conversão.
+        </p>
+
+        <div class="recomendacao-footer">
+          <span class="impacto positivo">
+            +18% potencial de crescimento
+          </span>
+        </div>
+      </div>
+
+      <!-- CARD EXEMPLO -->
+      <div class="recomendacao-item">
+        <div class="recomendacao-top">
+          <span class="recomendacao-icon">⚠️</span>
+          <span class="recomendacao-tag warning">
+            Atenção
+          </span>
+        </div>
+
+        <h3 class="recomendacao-titulo">
+          Aumento nas despesas operacionais
+        </h3>
+
+        <p class="recomendacao-texto">
+          Custos recorrentes aumentaram acima do esperado.
+          Revise assinaturas, fornecedores e despesas variáveis.
+        </p>
+
+        <div class="recomendacao-footer">
+          <span class="impacto negativo">
+            Possível redução de margem
+          </span>
+        </div>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div class="recomendacao-loading">
+        <div class="loading-line"></div>
+        <div class="loading-line short"></div>
+        <div class="loading-line"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- MODAL PARA ENVIAR RELATÓRIO -->
+  <div id="modalRelatorio" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModalRelatorio()">&times;</span>
+      <h2>Enviar Relatório por E-mail</h2>
+      <form onsubmit="enviarRelatorioEmail(event)">
+        <div class="form-group">
+          <label>E-mail para receber:</label>
+          <input type="email" id="emailRelatorio" required placeholder="seu@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Período:</label>
+          <select id="periodoRelatorio">
+            <option value="7">Últimos 7 dias</option>
+            <option value="30" selected>Últimos 30 dias</option>
+            <option value="90">Últimos 90 dias</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="agendarRelatorio" />
+            Agendar para envios semanais?
+          </label>
+        </div>
+        <button type="submit" class="btn btn--gold">Enviar Relatório</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="/js/analytics.js"></script>
+</body>
+</html>

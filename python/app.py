@@ -1,6 +1,7 @@
 from pathlib import Path
 from flask import Flask, jsonify, render_template, request, redirect
 import sqlite3
+from analytics import AnalyticsService
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,6 +13,9 @@ app = Flask(
     static_folder=str(BASE_DIR),
     static_url_path="",
 )
+
+# Inicializa serviço de Analytics
+analytics_service = AnalyticsService()
 
 
 def obter_conexao():
@@ -333,6 +337,100 @@ def deletar_usuario(usuario_id):
 @app.route("/usuario")
 def home():
     return render_template("home.html")
+
+
+# ==================== ANALYTICS ROUTES ====================
+
+@app.route("/analytics")
+def analytics():
+    return render_template("analytics.html")
+
+
+@app.route("/api/analytics/dashboard", methods=["GET"])
+def api_analytics_dashboard():
+    usuario_id = request.args.get("usuario_id", 1, type=int)
+    periodo = request.args.get("periodo", 30, type=int)
+
+    try:
+        kpis = analytics_service.get_dashboard_kpis(usuario_id, periodo)
+        previsao = analytics_service.gerar_previsao_crescimento(usuario_id)
+
+        return jsonify({
+            "sucesso": True,
+            "kpis": kpis,
+            "previsao": previsao,
+            "top_receitas": [],
+            "top_despesas": []
+        }), 200
+
+    except Exception as e:
+        return jsonify({"sucesso": False, "erro": str(e)}), 500
+
+
+@app.route("/api/analytics/relatorio", methods=["GET"])
+def api_analytics_relatorio():
+    usuario_id = request.args.get("usuario_id", 1, type=int)
+    periodo = request.args.get("periodo", 30, type=int)
+
+    try:
+        relatorio = analytics_service.gerar_relatorio(usuario_id, periodo)
+        return jsonify({
+            "sucesso": True,
+            "relatorio": relatorio
+        }), 200
+
+    except Exception as e:
+        return jsonify({"sucesso": False, "erro": str(e)}), 500
+
+
+@app.route("/api/analytics/enviar-relatorio", methods=["POST"])
+def api_analytics_enviar_relatorio():
+    dados = request.get_json()
+    usuario_id = dados.get("usuario_id", 1)
+    email = dados.get("email")
+    periodo = dados.get("periodo", 30)
+    agendar = dados.get("agendar", False)
+
+    if not email:
+        return jsonify({"sucesso": False, "mensagem": "E-mail é obrigatório"}), 400
+
+    try:
+        # Busca dados do usuário
+        conexao = obter_conexao()
+        cursor = conexao.cursor()
+        cursor.execute("SELECT Email FROM UsuariosLumoraAPP WHERE IDUsuariosLumora=?", (usuario_id,))
+        usuario = cursor.fetchone()
+        conexao.close()
+
+        if not usuario:
+            return jsonify({"sucesso": False, "mensagem": "Usuário não encontrado"}), 404
+
+        # Gera relatório
+        relatorio = analytics_service.gerar_relatorio(usuario_id, periodo)
+
+        # Envia por e-mail
+        resultado = analytics_service.enviar_relatorio_email(
+            email,
+            f"Usuário {usuario_id}",
+            relatorio
+        )
+
+        if resultado["status"] == "erro":
+            return jsonify({
+                "sucesso": False,
+                "mensagem": f"Erro ao enviar e-mail: {resultado['mensagem']}"
+            }), 500
+
+        # TODO: Agendar se necessário (usar scheduler como APScheduler)
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Relatório enviado com sucesso!",
+            "agendar": agendar
+        }), 200
+
+    except Exception as e:
+        return jsonify({"sucesso": False, "erro": str(e)}), 500
 
 
 if __name__ == "__main__":

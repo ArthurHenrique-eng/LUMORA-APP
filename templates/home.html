@@ -19,7 +19,7 @@
 
   <nav class="nav">
     <div class="container nav__inner">
-      <a href="http://127.0.0.1:5000/" class="nav__logo">
+      <a href="/templates/index.html" class="nav__logo">
         <span class="logo-mark">&#9672;</span>
         <span class="logo-text">Lumora</span>
       </a>
@@ -45,7 +45,7 @@
           </p>
           <div class="hero__cta">
             <a href="#modulos" class="btn btn--gold">Explorar modulos</a>
-            <a href="http://127.0.0.1:5000/" class="btn btn--outline">Voltar para landing</a>
+            <a href="/templates/index.html" class="btn btn--outline">Voltar para landing</a>
           </div>
         </div>
         <div class="hero__stats">
@@ -84,8 +84,7 @@
             </ul>
           </article>
 
-          <article class="module-card module-card--featured">
-            <span class="module-card__badge">Mais usado</span>
+          <article class="module-card">
             <span class="module-card__num">02</span>
             <span class="module-card__icon">💰</span>
             <h3>Gestao Financeira Inteligente</h3>
@@ -99,7 +98,23 @@
             </ul>
           </article>
 
-          <article class="module-card">
+          <article class="module-card module-card--featured">
+            <span class="module-card__badge">Novo!</span>
+            <span class="module-card__num">02b</span>
+            <span class="module-card__icon">📊</span>
+            <h3>Analytics & Business Intelligence</h3>
+            <p>KPIs executivos, previsoes com IA e relatorios automaticos por email.</p>
+            <ul>
+              <li>Dashboard com KPIs (ROI, LTV, CAC)</li>
+              <li>Previsoes de crescimento com IA</li>
+              <li>Relatorios automaticos por email</li>
+              <li>Graficos e visualizacoes</li>
+              <li>Recomendacoes inteligentes</li>
+            </ul>
+            <a href="/templates/analytics.html" class="btn btn--gold" style="margin-top: 1rem; display: inline-block;">Acessar Analytics</a>
+          </article>
+
+          <article class="module-card module-card--featured">
             <span class="module-card__num">03</span>
             <span class="module-card__icon">🎓</span>
             <h3>Educacao em Investimentos</h3>
@@ -124,7 +139,7 @@
           <article class="feature-box">
             <h3>Fluxo de Conta</h3>
             <p>Cadastro, login e redirecionamento entre paginas funcionando com banco SQLite.</p>
-            <a href="http://127.0.0.1:5000/cadastro">Cadastrar novo usuario</a>
+            <a href="/templates/cadastro.html">Cadastrar novo usuario</a>
           </article>
           <article class="feature-box">
             <h3>Gestao de Usuarios (API)</h3>
@@ -134,7 +149,7 @@
           <article class="feature-box">
             <h3>Roadmap do Produto</h3>
             <p>Base preparada para evoluir com dashboard real, metas, pagamentos e IA integrada.</p>
-            <a href="http://127.0.0.1:5000/">Ver visao geral da plataforma</a>
+            <a href="/templates/index.html">Ver visao geral da plataforma</a>
           </article>
         </div>
       </div>
@@ -182,7 +197,7 @@
         <p>Agora voce pode evoluir os modulos com dados reais, integracoes e automacoes.</p>
         <div class="cta__actions">
           <a href="#modulos" class="btn btn--gold">Revisar modulos</a>
-          <a href="http://127.0.0.1:5000/login" class="btn btn--ghost">Trocar conta</a>
+          <a href="/templates/login.html" class="btn btn--ghost">Trocar conta</a>
         </div>
       </div>
     </section>
