@@ -1,10 +1,10 @@
-# 📊 Lumora Analytics & Business Intelligence
+# Lumora Analytics & Business Intelligence
 
 Novo módulo completo para inteligência financeira acionável com KPIs, previsões com IA e relatórios automáticos.
 
 ---
 
-## 🎯 Funcionalidades Adicionadas
+## Funcionalidades Adicionadas
 
 ### 1. **Dashboard Executivo com KPIs**
 - **ROI (Return on Investment)**: Percentual de retorno sobre investimento
@@ -37,7 +37,7 @@ Novo módulo completo para inteligência financeira acionável com KPIs, previs�
 
 ---
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Passo 1: Inicializar o Banco de Dados
 
@@ -74,7 +74,7 @@ As previsões melhoram com histórico. Certifique-se de que seus dados têm:
 
 ---
 
-## 📡 Endpoints da API
+## Endpoints da API
 
 ### GET `/api/analytics/dashboard`
 Retorna KPIs e dados do dashboard.
@@ -127,7 +127,7 @@ Envia relatório por e-mail.
 
 ---
 
-## 💡 Métricas Explicadas
+## Métricas Explicadas
 
 ### ROI (Return on Investment)
 ```
@@ -160,7 +160,7 @@ Margem = ((Receita - Despesa) / Receita) × 100
 
 ---
 
-## 🤖 Como Funciona a Previsão de IA
+## Como Funciona a Previsão de IA
 
 A previsão não usa IA tradicional (como GPT), mas análise estatística inteligente:
 
@@ -177,7 +177,7 @@ A previsão não usa IA tradicional (como GPT), mas análise estatística inteli
 
 ---
 
-## 📧 Configurando Relatórios Automáticos
+## Configurando Relatórios Automáticos
 
 ### Com Gmail
 
@@ -207,7 +207,7 @@ SENDER_PASSWORD=SG.seu_api_key
 
 ---
 
-## 🎨 Customizações Possíveis
+## Customizações Possíveis
 
 ### 1. Adicionar mais KPIs
 Edite `analytics.py` método `get_dashboard_kpis()` para incluir:
@@ -253,7 +253,7 @@ def enviar_slack(mensagem):
 
 ---
 
-## 📊 Estrutura do Banco de Dados
+## Estrutura do Banco de Dados
 
 ```sql
 -- Transações
@@ -290,7 +290,7 @@ CREATE TABLE PrevisoesCrescimento (
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Erro ao enviar e-mail"
 - Verifique credenciais SMTP em `.env`
@@ -309,7 +309,7 @@ CREATE TABLE PrevisoesCrescimento (
 
 ---
 
-## 💰 Monetização
+## Monetização
 
 Este módulo agrega **valor premium** que atrai compradores:
 
@@ -322,7 +322,7 @@ Este módulo agrega **valor premium** que atrai compradores:
 
 ---
 
-## 📚 Próximas Evoluções
+## Próximas Evoluções
 
 - [ ] Integração com Open Finance (dados bancários reais)
 - [ ] Dashboard em tempo real com WebSockets
