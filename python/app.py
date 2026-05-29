@@ -51,44 +51,32 @@ def inicio():
 
 @app.route("/login", methods=["POST"])
 def login():
-    email = request.form["email"]
-    senha = request.form.get("senha") or request.form.get("password")
+    email = request.form.get("email", "")
+    senha = request.form.get("senha") or request.form.get("password", "")
+
+    if not email or not senha:
+        return redirect("/login?erro=Preencha todos os campos")
 
     conexao = sqlite3.connect(DB_PATH)
-
     cursor = conexao.cursor()
 
-
     cursor.execute(
-
         """
-
         SELECT *
-
         FROM UsuariosLumoraAPP
-
         WHERE Email=?
-
         AND Senha=?
-
         """,
-
         (email, senha)
-
     )
 
-
     usuario = cursor.fetchone()
-
     conexao.close()
 
-
     if usuario:
-
         return redirect("/home")
 
-
-    return redirect("/cadastro")
+    return redirect("/login?erro=Email ou senha incorretos")
 
 
 

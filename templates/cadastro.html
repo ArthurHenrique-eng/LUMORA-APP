@@ -20,7 +20,7 @@
 
     <section class="signup-shell" aria-label="Area de cadastro da Lumora">
       <aside class="signup-showcase">
-        <a class="brand" href="/templates/index.html" aria-label="Voltar para a pagina inicial">
+        <a class="brand" href="/" aria-label="Voltar para a pagina inicial">
           <span class="brand__mark">&#9672;</span>
           <span class="brand__text">Lumora</span>
         </a>
@@ -41,7 +41,7 @@
           <li>Base pronta para evoluir com recursos premium</li>
         </ul>
 
-        <a class="showcase__back" href="/templates/index.html">Voltar para inicio</a>
+        <a class="showcase__back" href="/">Voltar para inicio</a>
       </aside>
 
       <section class="signup-card" aria-labelledby="signup-title">
@@ -53,7 +53,7 @@
 
         <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
 
-        <form id="signupForm" class="signup-form" method="post" action="/templates/login.html" novalidate>
+        <form id="signupForm" class="signup-form" method="post" action="/registrar" novalidate>
           <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" placeholder="email@exemplo.com" required />
@@ -79,7 +79,7 @@
           </div>
 
           <button id="submitButton" type="submit" class="btn btn--primary">
-            <a class="btn__text" href="/templates/login.html">Criar conta</a> 
+            <span class="btn__text">Criar conta</span>
             <span class="btn__loader" aria-hidden="true"></span>
           </button>
         </form>
@@ -87,9 +87,9 @@
         <footer class="signup-card__footer">
           <p>
             Ja tem conta?
-            <a href="/templates/login.html">Entrar agora</a>
+            <a href="/login">Entrar agora</a>
           </p>
-          <a href="/templates/index.html" class="footer-link">Voltar para inicio</a>
+          <a href="/" class="footer-link">Voltar para inicio</a>
         </footer>
       </section>
     </section>
