@@ -3,7 +3,7 @@
   if (!form) return;
 
   const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("senha");
+  const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirmarSenha");
   const emailError = document.getElementById("emailError");
   const passwordError = document.getElementById("passwordError");

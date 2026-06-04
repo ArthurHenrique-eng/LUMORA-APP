@@ -3,6 +3,13 @@ from flask import Flask, jsonify, render_template, request, redirect
 import sqlite3
 from analytics import AnalyticsService
 
+# Inicializa banco de dados
+try:
+    from init_db import init_database
+    init_database()
+except ImportError:
+    pass
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "sql" / "LUMORA_APP.db"
@@ -51,10 +58,10 @@ def inicio():
 
 @app.route("/login", methods=["POST"])
 def login():
-    email = request.form.get("email", "")
-    senha = request.form.get("senha") or request.form.get("password", "")
+    email = request.form.get("email", "").strip()
+    password = request.form.get("password", "").strip()
 
-    if not email or not senha:
+    if not email or not password:
         return redirect("/login?erro=Preencha todos os campos")
 
     conexao = sqlite3.connect(DB_PATH)
@@ -67,7 +74,7 @@ def login():
         WHERE Email=?
         AND Senha=?
         """,
-        (email, senha)
+        (email, password)
     )
 
     usuario = cursor.fetchone()
@@ -97,77 +104,49 @@ def registrar():
     if request.method == "GET":
         return redirect("/cadastro")
 
-    email = request.form["email"]
-    senha = request.form.get("senha") or request.form.get("password")
+    email = request.form.get("email", "").strip()
+    password = request.form.get("password", "").strip()
+
+    if not email or not password:
+        return redirect("/cadastro?erro=Preencha todos os campos")
 
     conexao = sqlite3.connect(DB_PATH)
-
     cursor = conexao.cursor()
 
-
     cursor.execute(
-
         """
-
         SELECT *
-
         FROM UsuariosLumoraAPP
-
         WHERE Email=?
-
         """,
-
         (email,)
-
     )
-
 
     existe = cursor.fetchone()
 
-
     if existe:
-
         conexao.close()
-
-        return "Email já cadastrado"
-
-
+        return redirect("/cadastro?erro=Email já cadastrado")
 
     cursor.execute(
-
         """
-
         INSERT INTO
-
         UsuariosLumoraAPP(
-
             Email,
-
             Senha
-
         )
-
         VALUES(
-
             ?,
-
             ?
-
         )
-
         """,
-
-        (email, senha)
-
+        (email, password)
     )
 
-
     conexao.commit()
-
     conexao.close()
 
-
-    return redirect("/login")
+    return redirect("/login?sucesso=Conta criada com sucesso! Faça login.")
 
 
 
