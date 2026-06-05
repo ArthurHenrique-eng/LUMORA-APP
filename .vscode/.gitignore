@@ -1,0 +1,157 @@
+# ==================== AMBIENTE PYTHON ====================
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Instalação
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==================== IDE & EDITOR ====================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# vim
+.vim/
+*.swp
+*.swo
+*~
+
+# ==================== BANCO DE DADOS ====================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+sql/*.db
+sql/*.sqlite
+
+# Backup de banco de dados
+*.db-journal
+
+# ==================== VARIÁVEIS DE AMBIENTE ====================
+
+.env
+.env.local
+.env.*.local
+.flaskenv
+
+# ==================== LOGS ====================
+
+*.log
+logs/
+*.log.*
+
+# ==================== SISTEMA OPERACIONAL ====================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# ==================== DEPENDÊNCIAS ====================
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Arquivo lock (opcional, mas recomendado)
+# pip.lock
+
+# ==================== TESTES ====================
+
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+htmlcov/
+
+# ==================== BUILD ====================
+
+*.tar.gz
+*.zip
+
+# ==================== DOCUMENTAÇÃO GERADA ====================
+
+site/
+docs/_build/
+
+# ==================== UPLOADS E TEMPORÁRIOS ====================
+
+uploads/
+temp/
+tmp/
+*.tmp
+.tmp/
+
+# ==================== ARQUIVOS SECRETOS ====================
+
+# Senhas, tokens, credenciais
+secrets.json
+config.json
+credentials.json
+*.pem
+*.key
+
+# ==================== ARQUIVOS GERADOS ====================
+
+# Relatórios
+reports/
+*.pdf
+*.xlsx
+*.csv
+
+# Cache
+.cache/
+cache/
+
+# ==================== DESENVOLVIMENTO LOCAL ====================
+
+# Configurações locais
+.claude/settings.local.json
+local_settings.py

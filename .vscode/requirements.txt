@@ -1,0 +1,75 @@
+# LUMORA APP - Dependências Python
+# Instale com: pip install -r requirements.txt
+
+# ==================== DEPENDÊNCIAS PRINCIPAIS ====================
+
+# Framework Web
+Flask==2.3.2
+Werkzeug==2.3.6
+Jinja2==3.1.2
+click==8.1.3
+itsdangerous==2.1.2
+
+# ==================== UTILIDADES ====================
+
+# Para envio de e-mail e variáveis de ambiente
+python-dotenv==1.0.0
+
+# Para agendamento automático de relatórios
+APScheduler==3.10.4
+
+# Para geração de PDF de relatórios
+reportlab==4.0.4
+
+# Para integração com APIs externas
+requests==2.31.0
+
+# ==================== OPCIONAL: INTELIGÊNCIA ARTIFICIAL ====================
+
+# Para integração com OpenAI API (recomendado para previsões)
+openai==0.27.8
+
+# ==================== RECOMENDADO PARA PRODUÇÃO (FUTURO) ====================
+
+# Servidor de aplicação web
+# gunicorn==20.1.0
+
+# ORM para banco de dados
+# Flask-SQLAlchemy==3.0.5
+
+# Gerenciamento de login/sessão
+# Flask-Login==0.6.2
+# Flask-Session==0.4.0
+
+# Segurança de senhas
+# bcrypt==4.0.1
+
+# Tokens JWT
+# PyJWT==2.6.0
+
+# ==================== ANÁLISE DE DADOS (FUTURO) ====================
+
+# Data Science e análise
+# pandas==1.5.3
+# numpy==1.24.1
+
+# Machine Learning
+# scikit-learn==1.2.1
+
+# Visualização de dados
+# matplotlib==3.6.3
+
+# ==================== TESTES (FUTURO) ====================
+
+# Framework de testes
+# pytest==7.2.1
+# pytest-cov==4.0.0
+
+# ==================== DESENVOLVIMENTO ====================
+
+# Recarga automática do servidor (desenvolvimento)
+# python-reload==1.0
+
+# Linting e formatação
+# flake8==6.0.0
+# black==23.1.0
